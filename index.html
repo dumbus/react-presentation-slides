@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <section>
+            <h1>React</h1>
+          </section>
+
+          <section>
+            <h2>What is React?</h2>
+            <p class="fragment fade-in">A JavaScript library for building user interfaces. (from official documentation)</p>
+            <p class="fragment fade-in">React was developed by Facebook company.</p>
+          </section>
+
+          <section>
+            <h2>Who is using React?</h3>
+            <ul>
+              <li class="fragment fade-in">AirBNB</li>
+              <li class="fragment fade-in">Discord</li>
+              <li class="fragment fade-in">Instagram</li>
+              <li class="fragment fade-in">Pinterest</li>
+              <li class="fragment fade-in">Uber</li>
+              <li class="fragment fade-in">Netflix</li>
+            </ul>
+          </section>
+        </section>
+				
+        <section>
+          <section>
+            <h1>Angular</h1>
+          </section>
+
+          <section>
+            <h2>What is Angular?</h2>
+            <p class="fragment fade-in">A component-based framework for building scalable web applications</p>
+            <p class="fragment fade-in">Angular was developed by Google company.</p>
+          </section>
+
+          <section>
+            <h2>Who is using Angular?</h3>
+            <ul>
+              <li class="fragment fade-in">Skyeng</li>
+              <li class="fragment fade-in">MTS</li>
+              <li class="fragment fade-in">IsSoft</li>
+              <li class="fragment fade-in">Iponweb</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>React Features</h2>
+          </section>
+
+          <section>
+            <h3>Declarative</h3>
+            <p class="fragment fade-in">
+              Declarative programming is when you write your code in such a way that it describes what you want to do, and not how you want to do it
+            </p>
+            <p class="fragment fade-in">Declarative views make your code more predictable and easier to debug.</p>
+          </section>
+
+          <section>
+            <h3>JSX</h3>
+            <p>
+              <pre class="fragment fade-in">
+                <code>const element = <h1>Hello, world!</h1>;</code>
+              </pre>
+            </p>
+            <p class="fragment fade-in">
+              This is JSX syntax and this is an extension to JS.
+            </p>
+            <p class="fragment fade-in">
+              JSX combines rendering with events handling and states changing.
+            </p>
+            <p class="fragment fade-in">
+              React <b>doesn’t require</b> using JSX
+            </p>
+          </section>
+
+          <section>
+            <h3>Virtual DOM</h3>
+            <p class="fragment fade-in">
+              DOM is kept in memory and synced with real DOM structure.
+            </p>
+            <p class="fragment fade-in">
+              VDOM requires less resources.
+            </p>
+            <p class="fragment fade-in">
+              VDOM makes our applications faster.
+            </p>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h2>Rendering Elements</h2>
+          </section>
+
+          <section>
+            <h3>What element is?</h3>
+            <p class="fragment fade-in" data-fragment-index="1">
+              Elements are the smallest building blocks of React apps.
+            </p>
+            <p class="fragment fade-in" data-fragment-index="2">
+              An element describes what you want to see on the screen:
+            </p>
+            <pre class="fragment fade-in" data-fragment-index="2">
+              <code>
+                const element = <h1>Hello, world</h1>;
+              </code>
+            </pre>
+            <p class="fragment fade-in">
+              React DOM takes care of updating the DOM to match the React elements.
+            </p>
+          </section>
+
+          <section>
+            <h3>Rendering an Element into the DOM</h3>
+            <pre class="fragment fade-in" data-fragment-index="1">
+              <code>
+                <div id="root"></div>
+              </code>
+            </pre>
+            <p class="fragment fade-in" data-fragment-index="1">
+              This block is called a “root” DOM node because everything inside it will be managed by React DOM.
+            </p>
+            <p class="fragment fade-in" data-fragment-index="2">
+              To render a React element into a root DOM node, pass both to ReactDOM.render():
+            </p>
+            <pre class="fragment fade-in" data-fragment-index="2">
+              <code>
+      const element = <h1>Hello, world</h1>;
+      ReactDOM.render(element, document.getElementById('root'));
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h3>Updating the Rendered Element</h3>
+            <p class="fragment fade-in" data-fragment-index="1">React elements are immutable.</p>
+            <p class="fragment fade-in" data-fragment-index="2">
+              If we want to update the UI we can create a new element, and pass it to ReactDOM.render():
+            </p>
+            <pre class="fragment fade-in" data-fragment-index="2">
+              <code>
+  function tick() {
+    const element = (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {new Date().toLocaleTimeString()}.</h2>
+      </div>
+    );
+    ReactDOM.render(element, document.getElementById('root'));
+  }
+  
+  setInterval(tick, 1000);
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>React components</h2>
+          </section>
+
+          <section>
+            <h3>What component is?</h3>
+            <p class="fragment fade-in">
+            Components let you split the UI into independent, reusable pieces.
+            </p>
+            <p class="fragment fade-in">
+              Conceptually, components are like JavaScript functions. 
+            </p>
+            <p class="fragment fade-in">
+              They accept inputs that are called "props" and return React elements.
+            </p>
+          </section>
+
+          <section>
+            <h3>Function and Class Components</h3>
+            
+            <p class="fragment fade-in" data-fragment-index="1">Functional component:</p>
+            <pre class="fragment fade-in" data-fragment-index="1">
+              <code>
+        function Welcome (props) {
+          return <h1> Hello, {props.name}</h1>;
+        }
+              </code>
+            </pre>
+
+            <p class="fragment fade-in" data-fragment-index="2">Class component</p>
+            <pre class="fragment fade-in" data-fragment-index="2">
+              <code>
+          class Welcome extends React.Component {
+            render() {
+              return <h1> Hello, {this.props.name}</h1>;
+            }
+          }
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>State</h2>
+            <p class="fragment fade-in">
+              React components has a built-in state object.
+            </p>
+            <p class="fragment fade-in">
+              The state object is where you store property values that belongs to the component.
+            </p>
+            <p class="fragment fade-in">
+              When the state object changes, the component re-renders.
+            </p>
+          </section>
+
+          <section>
+            <h3>Creating the state Object</h3>
+            <p class="fragment fade-in" data-fragment-index="1">The state object is initialized in the constructor:</p>
+
+            <pre class="fragment fade-in" data-fragment-index="1">
+              <code>
+          class Car extends React.Component {
+            constructor(props) {
+              super(props);
+              this.state = {brand: "Ford"};
+            }
+          }
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h3>Using the state Object</h3>
+
+            <p class="fragment fade-in">You can refer to the state object anywhere in the component by using the <b>this.state.propertyname</b> syntax:</p>
+            <pre class="fragment fade-in">
+              <code>
+                <div>
+                  <h1>My {this.state.brand}</h1>
+                  <p>
+                    It is a {this.state.color}
+                  </p>
+                </div>
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h3>Changing the state Object</h3>
+            <p class="fragment fade-in" data-fragment-index="1">
+              To change a value in the state object, use the this.setState() method.
+            </p>
+            <p class="fragment fade-in" data-fragment-index="2">When a value in the state object changes, the component will re-render.</p>
+            <pre class="fragment fade-in" data-fragment-index="2">
+              <code>
+                changeColor = () => {
+                  this.setState({color: "blue"});
+                }
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Handling Events</h2>
+
+            <p class="fragment fade-in" data-fragment-index="1">Handling events with React elements is very similar to handling events on DOM elements.
+            </p>
+            <p class="fragment fade-in" data-fragment-index="2">
+              There are some syntax differences:
+            </p>
+            <ul>
+              <li class="fragment fade-in" data-fragment-index="3">
+                React events are named using camelCase, rather than lowercase.
+              </li>
+              <li class="fragment fade-in" data-fragment-index="4">
+                With JSX you pass a function as the event handler, rather than a string.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="fragment fade-in" data-fragment-index="1">For example, the HTML:</p>
+            <pre class="fragment fade-in" data-fragment-index="1">
+              <code>
+                <button onclick="activateLasers()">
+                  Activate Lasers
+                </button>
+              </code>
+            </pre>
+
+            <p class="fragment fade-in" data-fragment-index="2">is slightly different in React:</p>
+            <pre class="fragment fade-in" data-fragment-index="2">
+              <code>
+                <button onClick={activateLasers}>
+                  Activate Lasers
+                </button>
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h3>More differences</h3>
+            <ul>
+              <li class="fragment fade-in" data-fragment-index="1">
+                You cannot return false to prevent default behavior in React.
+              </li>
+              <li class="fragment fade-in" data-fragment-index="2">
+                In JavaScript, class methods are not bound by default. 
+                If you forget to bind this.handleClick and pass it to onClick, this will be undefined when the function is actually called.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Thank you for your attention!</h2>
+        </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
